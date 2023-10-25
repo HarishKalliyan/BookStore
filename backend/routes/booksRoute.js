@@ -1,9 +1,9 @@
 import express from 'express';
-import { Book } from '../modules/bookmodel';
+import { Book } from '../modules/bookmodel.js';
 const router = express.Router();
 // route to save book
 
-router.post('/books',async(request,response)=>{
+router.post('/',async(request,response)=>{
     try{
         if(!request.body.title||
             !request.body.aurthor||
@@ -50,7 +50,7 @@ router.get('/books',async(request,response)=>{
 // Route to get books one by one
 
 
-router.get('/books/:id',async(request,response)=>{
+router.get('/:id',async(request,response)=>{
     try{
         const {id}= request.params;
         const book = await Book.findById(id);
@@ -63,7 +63,7 @@ router.get('/books/:id',async(request,response)=>{
 
 
 // Route to Update a Book data
-router.put('/books/:id',async(request,response)=>{
+router.put('/:id',async(request,response)=>{
     try{
         if(!request.body.title||
             !request.body.aurthor||
@@ -91,7 +91,7 @@ router.put('/books/:id',async(request,response)=>{
     }
 })
 // Route for Delete Book
-router.delete('/books/:id',async(request,response)=>{
+router.delete('/:id',async(request,response)=>{
     try{
         const {id} = request.params;
 

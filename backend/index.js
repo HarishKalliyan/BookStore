@@ -12,7 +12,7 @@ app.use(express.json());
 // get request and response
 app.get('/',(request,response)=>{
     console.log(request);
-    return response.status(234).send('Welcome to mern stack');
+    return response.status(234).send('Welcome to Mern stack');
 });
 
 app.use('/books',booksRoute); 
@@ -27,4 +27,5 @@ mongoose.connect(mongourl)
 })
 .catch((error)=>{
     console.log(error);
+    
 });
