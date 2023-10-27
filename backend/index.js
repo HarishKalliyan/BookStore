@@ -8,14 +8,14 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(cors(
-    {
-        origin: "http://localhost:3000",
-        method: ['GET','POST','PUT','DELETE'],
-        allowedHeaders:['Content-Type'],
-    }
+// app.use(cors(
+//     {
+//         origin: "http://localhost:3000",
+//         method: ['GET','POST','PUT','DELETE'],
+//         allowedHeaders:['Content-Type'],
+//     }
     
-))
+// ))
 // get request and response
 app.get('/',(request,response)=>{
     console.log(request);
